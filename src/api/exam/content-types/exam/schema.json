@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "exams",
+  "info": {
+    "singularName": "exam",
+    "pluralName": "exams",
+    "displayName": "exam",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "students": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::student.student",
+      "mappedBy": "exam"
+    },
+    "instructors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::instructor.instructor",
+      "mappedBy": "exams"
+    }
+  }
+}
